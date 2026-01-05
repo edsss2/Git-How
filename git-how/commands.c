@@ -8,14 +8,15 @@
 static Command commands[] = {
     {"--help", show_help},
     {"--version", print_version},
+    {"--list", print_list},
 };
 
-int dispatch_command(int argc, const char **argv) {
+int dispatch_command(const char **argv) {
     int total = sizeof(commands) / sizeof(commands[0]);
 
     for (int i = 0; i < total; i++) {
         if (strcmp(argv[1], commands[i].name) == 0) {
-            return commands[i].handler(argc, argv);
+            return commands[i].handler(argv);
         }
 
     }
@@ -24,7 +25,7 @@ int dispatch_command(int argc, const char **argv) {
 }
 
 int handle_two_args(const char **argv) {
-
+    return dispatch_command(argv);
 }
 
 int handle_many_args(int argc, const char **argv) {

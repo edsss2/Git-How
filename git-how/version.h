@@ -2,6 +2,6 @@
 #define VERSION_H
 
 #define HOW_VERSION "0.1.0"
-void print_version();
+int print_version();
 
 #endif
