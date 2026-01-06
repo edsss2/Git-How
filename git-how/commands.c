@@ -4,6 +4,7 @@
 #include "commands.h"
 #include "help.h"
 #include "version.h"
+#include "how.h"
 
 static Command commands[] = {
     {"--help", show_help},
@@ -29,8 +30,13 @@ int handle_two_args(const char **argv) {
 }
 
 int handle_many_args(int argc, const char **argv) {
-    printf("Comandos com múltiplos argumentos ainda não implementados.\n");
-    return 0;
+    if(strcmp(argv[1], "git") == 0) {
+        return how_do_git(argc, argv);
+    } else {
+        return how_explain_git(argc, argv);
+    }
+
+    return command_not_found(argv[1]);
 }
 
 int command_not_found(const char *cmd) {

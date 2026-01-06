@@ -16,3 +16,11 @@ int how_main(int argc, const char **argv) {
             return handle_many_args(argc, argv);
     }
 }
+
+int how_do_git(int argc, const char **argv) {
+    return 0;
+}
+
+int how_explain_git(int argc, const char **argv) {
+    return 0;
+}
