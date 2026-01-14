@@ -2,7 +2,7 @@
 #define FLAG_H
 
 typedef struct {
-    const char *name;
+    const char **name;
     const char *description;
     const char *usage;
 } Flag;
